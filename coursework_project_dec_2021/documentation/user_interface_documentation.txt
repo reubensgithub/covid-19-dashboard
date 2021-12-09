@@ -1,0 +1,30 @@
+NAME
+    user_interface
+
+DESCRIPTION
+    THe purpose of this module is to utilise the covid_data_handler module
+    and the covid_news_handling module and implement them into a dashboard
+    that allows the users to schedule updates and read the covid data
+    and news articles in a neater and cleaner fashion via a user interface
+
+FUNCTIONS
+    index() -> str
+        This is the function that is executed when /index
+        (our homepage and only page) is accessed. This function
+         is what will implement the ability to schedule updates,
+         display the covid data and news articles to the front end
+         via the index.html template.
+
+DATA
+    app = <Flask 'user_interface'>
+    articles_list = [{'author': 'Matt Novak', 'content': 'The U.S. Senate ...
+    current_time = '11:55:27'
+    data_list_england = [{'areaCode': 'E92000001', 'areaName': 'England', ...
+    data_list_exeter = [{'areaCode': 'E07000041', 'areaName': 'Exeter', 'c...
+    local_7day_infections = 843
+    national_7day_infections = 291523
+    now = datetime.datetime(2021, 12, 9, 11, 55, 27, 242167)
+    request = <LocalProxy unbound>
+    title_list = ["U.S. Senate Votes to Block President Biden's Vaccine Ma...
+    update = []
+    update_titles = []

@@ -1,0 +1,31 @@
+NAME
+    covid_news_handling
+
+DESCRIPTION
+    This module's purpose is to return the news
+    articles related to covid and to be able to
+    schedule regular updates for when the user wants
+    the displayed news articles to update
+
+FUNCTIONS
+    news_API_request(covid_terms: str) -> List[dict]
+        This function will use the NewsApi to get news articles
+        related to covid from the internet and return them as a
+        list.
+
+    update_news(update_interval: int, update_name: str, repeat=False) -> List[object]
+        This function allows the user to schedule updates
+        for when they want the NewsApi to get new news
+         articles at.
+
+DATA
+    List = typing.List
+    article = {'author': None, 'content': 'LONDON, Dec 9 (Reuters) - World...
+    articles_list = [{'author': 'Matt Novak', 'content': 'The U.S. Senate ...
+    config = <configparser.ConfigParser object>
+    current_date = '2021-12-09'
+    scheduler = <sched.scheduler object>
+    title_list = ["U.S. Senate Votes to Block President Biden's Vaccine Ma...
+
+FILE
+    c:\users\reube\pycharmprojects\coursework_project_dec2021\covid_news_handling.py

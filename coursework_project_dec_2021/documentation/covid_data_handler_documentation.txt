@@ -1,0 +1,39 @@
+NAME
+    covid_data_handler
+
+DESCRIPTION
+    This module has various functions inside it that will allow
+    the processing and handling of covid data, whether from a
+    CSV file or returned from an API
+
+FUNCTIONS
+    covid_API_request(location: str, location_type: str) -> list
+        This function will use the Cov19API provided by
+        Public Health England and return all of the values of the given
+        fields, from the start date up to the current date. This data
+        is returned in a JSON format.
+
+    parse_csv_data(csv_filename: str) -> list
+        This function will take the csv data from the csv file and return it as a list
+
+    process_covid_csv_data(covid_csv_data: object) -> int
+        This function will take the returned list of data from parse_csv_data()
+        (converted to a dataframe here for convenience in accessing values) and will return
+        the necessary statistics back to the user
+
+    schedule_covid_updates(update_interval: int, update_name: str, repeat=False) -> object
+        This function allows the user to schedule updates
+        for when they want the Cov19API to get values at.
+
+DATA
+    data_list_england = [{'areaCode': 'E92000001', 'areaName': 'England', ...
+    data_list_exeter = [{'areaCode': 'E07000041', 'areaName': 'Exeter', 'c...
+    df_england =            date areaName   areaCode  ...  newDea...N     ...
+    df_exeter =            date areaName   areaCode  ...  newDea....0     ...
+    eng = {'data': [{'areaCode': 'E92000001', 'areaName': 'England', 'cumC...
+    exe = {'data': [{'areaCode': 'E07000041', 'areaName': 'Exeter', 'cumCa...
+    info = {'areaCode': 'E92000001', 'areaName': 'England', 'cumCasesByPub...
+    local_7day_infections = 843
+    national_7day_infections = 291523
+    piece = {'areaCode': 'E07000041', 'areaName': 'Exeter', 'cumCasesByPub...
+    scheduler = <sched.scheduler object>
